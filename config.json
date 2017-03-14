@@ -1,0 +1,6 @@
+{
+    "SCALR_SIGNING_KEY": "scalr signing key",
+    "INFOBLOX_HOST": "0.0.0.0",
+    "INFOBLOX_USERNAME": "",
+    "INFOBLOX_PASSWORD": ""    
+}
