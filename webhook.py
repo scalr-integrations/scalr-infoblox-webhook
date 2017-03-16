@@ -27,7 +27,7 @@ INFOBLOX_USERNAME = ''
 INFOBLOX_PASSWORD = ''
 
 
-@app.route("/", methods=['POST'])
+@app.route("/infoblox/", methods=['POST'])
 def webhook_listener():
     try:
         if not validate_request(request):
