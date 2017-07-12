@@ -26,7 +26,7 @@ pip install -r requirements.txt
 - Configure uwsgi to serve the webhook
 ```
 cp uwsgi.ini /etc/uwsgi.d/infoblox-webhook.ini
-chmod uwsgi:uwsgi /etc/uwsgi.d/infoblox-webhook.ini
+chown uwsgi:uwsgi /etc/uwsgi.d/infoblox-webhook.ini
 systemctl enable uwsgi
 ```
 
