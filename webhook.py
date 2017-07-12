@@ -29,21 +29,17 @@ INFOBLOX_PASSWORD = ''
 
 @app.route("/infoblox/", methods=['POST'])
 def webhook_listener():
-    try:
-        if not validate_request(request):
-            abort(403)
+    if not validate_request(request):
+        abort(403)
 
-        data = json.loads(request.data)
-        if 'eventName' not in data or 'data' not in data:
-            abort(404)
+    data = json.loads(request.data)
+    if 'eventName' not in data or 'data' not in data:
+        abort(404)
 
-        if data['eventName'] == 'HostUp':
-            return add_server(data['data'])
-        elif data['eventName'] in ['HostDown', 'BeforeHostTerminate']:
-            return delete_server(data['data'])
-    except Exception:
-        logging.exception('Error processing this request')
-        abort(500)
+    if data['eventName'] == 'HostUp':
+        return add_server(data['data'])
+    elif data['eventName'] in ['HostDown', 'BeforeHostTerminate']:
+        return delete_server(data['data'])
 
 
 def get_hostname(data):
