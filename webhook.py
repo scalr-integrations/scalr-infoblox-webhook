@@ -15,7 +15,7 @@ from infoblox_client import connector
 from infoblox_client import objects
 
 
-config_file = './config.json'
+config_file = './config_prod.json'
 
 logging.basicConfig(level=logging.DEBUG)
 app = Flask(__name__)

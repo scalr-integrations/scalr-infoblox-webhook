@@ -51,9 +51,14 @@ and click on Save to create the webhook.
 
 #### Webhook configuration
 
-Edit the `config.json` file and set the Scalr signing key, infoblox host as well as valid credentials for Infoblox.
+Create the production configuration file:
+```
+cp config.json config_prod.json
+```
 
-Reload the configuration with:
+Edit the `config_prod.json` file and complete it with the Scalr signing key, infoblox host as well as valid credentials for Infoblox.
+
+Reload the configuration:
 ```
 systemctl restart uwsgi
 ```
