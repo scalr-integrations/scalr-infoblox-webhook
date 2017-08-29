@@ -43,7 +43,10 @@ def webhook_listener():
 
 
 def get_hostname(data):
-    return data['SCALR_EVENT_SERVER_HOSTNAME'].lower()
+    hostname = data['SCALR_EVENT_SERVER_HOSTNAME'].split(".")[0]
+    domain = data['DOMAIN']
+    fqdn = hostname.lower() + "." + domain
+    return fqdn
 
 
 def get_ip(data):
